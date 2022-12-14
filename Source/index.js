@@ -1,18 +1,7 @@
-// Set up index.html to load the bundle
-// Make sure to load uuid via an npm module when necessary
-
-// --
-
-// Add necessary imports
-
 // Render initial todos
-
 // Set up search text handler
-
 // Set up checkbox handler
-
 // Set up form submission handler
-
 // Add a watcher for local storage
 
 
@@ -24,6 +13,7 @@ import { renderTodos } from './views.js'
 renderTodos()
 
 
+// Set up search text handler
 document.querySelector( '#search-text' ).addEventListener( 'input', ( event ) => {
   setFilters({
     searchText: event.target.value
@@ -32,6 +22,7 @@ document.querySelector( '#search-text' ).addEventListener( 'input', ( event ) =>
 } )
 
 
+// Set up checkbox handler
 document.querySelector( '#hide-completed' ).addEventListener( 'change', ( event ) => {
   setFilters({
     hideCompleted: event.target.checked
@@ -40,7 +31,7 @@ document.querySelector( '#hide-completed' ).addEventListener( 'change', ( event 
 } )
 
 
-// Add a new item via form
+// Set up form submission handler
 document.querySelector( '#new-todo' ).addEventListener( 'submit', ( event ) => {
   event.preventDefault()
   const text = event.target.elements.addTodo.value.trim()
@@ -53,6 +44,7 @@ document.querySelector( '#new-todo' ).addEventListener( 'submit', ( event ) => {
 } )
 
 
+// Add a watcher for local storage
 window.addEventListener( 'storage', ( event ) => {
   if( event.key === 'todos' ) {
     loadTodos()
