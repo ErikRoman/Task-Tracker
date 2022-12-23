@@ -34,7 +34,7 @@ document.querySelector( '#hide-completed' ).addEventListener( 'change', ( event 
 // Set up form submission handler
 document.querySelector( '#new-todo' ).addEventListener( 'submit', ( event ) => {
   event.preventDefault()
-  const text = event.target.elements.addTodo.value.trim()
+  const text = event.target.elements.addTodo.value
 
   if ( text.length > 0 ) {
       createTodo( text )
